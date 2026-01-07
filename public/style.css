@@ -1,4 +1,234 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Gradient Animation for Background */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 0 50% 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 4em;
+    color: #ff4757;
+    margin: 0;
+    text-shadow: 2px 2px #ffa726;
+    animation: wiggle 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #3742fa;
+    margin: 20px 0;
+}
+
+.cta-link {
+    display: inline-block;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px #ff4757;
+}
+
+.cta-link:hover {
+    background-color: #ff4757;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px #ff3742;
+    animation: bounce 0.5s;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Wiggle Animation */
+@keyframes wiggle {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #2ed573;
+    font-size: 2.5em;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+/* Books Section */
+.books {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.books h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #ffa726;
+    font-size: 2.5em;
+}
+
+.book-card {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffeaa7;
+    border-radius: 20px;
+    border: 5px solid #fdcb6e;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-shape {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.book-card h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #e17055;
+    margin: 10px 0;
+}
+
+.book-card p {
+    color: #636e72;
+}
+
+/* Facts Section */
+.facts {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.facts h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #6c5ce7;
+    font-size: 2.5em;
+}
+
+.fact {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #a29bfe;
+    border-radius: 20px;
+    border: 5px solid #6c5ce7;
+}
+
+.fact p {
+    color: white;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+}
+
+/* Floating Shapes */
+.floating-shape {
+    position: fixed;
+    font-size: 2em;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .book-card, .fact {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+    .about, .books, .facts {
+        margin: 10px;
+        padding: 40px 20px;
+    }
 }
